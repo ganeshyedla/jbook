@@ -1,10 +1,12 @@
 import ReactDOM from "react-dom/client";
 import "bulmaswatch/superhero/bulmaswatch.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 // import CodeCell from "./components/code-cell";
 import TextEditor from "./components/text-editor";
 import { Provider } from "react-redux";
 import { store } from "./state";
 import CellList from "./components/cell-list";
+import { ActionType } from "./state/action-types";
 
 const App = () => {
 
@@ -20,3 +22,27 @@ const App = () => {
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(<App />);
+
+store.dispatch({
+  type: ActionType.INSERT_CELL_BEFORE,
+  payload: {
+    id: "sads1dwq",
+    type: 'code'
+  }
+});
+
+store.dispatch({
+  type: ActionType.INSERT_CELL_BEFORE,
+  payload: {
+    id: "sad21as",
+    type: 'text'
+  }
+});
+
+store.dispatch({
+  type: ActionType.INSERT_CELL_BEFORE,
+  payload: {
+    id: "sadqw112",
+    type: 'code'
+  }
+});
